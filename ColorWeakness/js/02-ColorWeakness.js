@@ -96,25 +96,25 @@ function rule() {
   score = score + parseInt(cdTimeEle.innerHTML);
   scoreEle.innerHTML = score;
 
-  // if (nowLevel <= 4) {
-  //   newLevel(nowLevel + 1);
-  // } else if (nowLevel <= 6) {
-  //   newLevel(nowLevel);
-  // } else if (nowLevel <= 8) {
-  //   newLevel(nowLevel - 1);
-  // } else if (nowLevel <= 10) {
-  //   newLevel(7);
-  // } else if (nowLevel <= 16) {
-  //   newLevel(8);
-  // } else if (nowLevel <= 25) {
-  //   newLevel(9);
-  // } else {
-  //   alert('Congratulations!');
-  //   cdTimeEle.innerHTML = 0;
-  //   if (timer != null) {
-  //     clearInterval(timer);
-  //   }
-  // }
+  if (nowLevel <= 4) {
+    newLevel(nowLevel + 1);
+  } else if (nowLevel <= 6) {
+    newLevel(nowLevel);
+  } else if (nowLevel <= 8) {
+    newLevel(nowLevel - 1);
+  } else if (nowLevel <= 10) {
+    newLevel(7);
+  } else if (nowLevel <= 16) {
+    newLevel(8);
+  } else if (nowLevel <= 25) {
+    newLevel(9);
+  } else {
+    alert('Congratulations!');
+    cdTimeEle.innerHTML = 0;
+    if (timer != null) {
+      clearInterval(timer);
+    }
+  }
 
   if (nowLevel == times[0]) {
     newLevel(2);
