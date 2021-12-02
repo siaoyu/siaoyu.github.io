@@ -80,7 +80,7 @@ fetch(url)
       <div class="content">
         <h2 class="cityName">${cityweatherData.locationName}</h2>
         <p><span class="startTime">${cityweatherData.startTime.slice(5, -3)}</span> - <span class="endTime">${cityweatherData.endTime.slice(5, -3)}</span></p>
-        <p class="Wx">${getWxIcon(cityweatherData.WxValue)}</p>
+        <p class="Wx">${getWxIcon(cityweatherData.WxValue, cityweatherData.Wx)}</p>
         <p><span class="MinT">${cityweatherData.MinT}</span>&#176;C - <span class="MaxT">${cityweatherData.MaxT}</span>&#176;C</p>
         <p><i class="fas fa-umbrella"></i> <span class="PoP">${cityweatherData.PoP}</span>&#037;</p>
         <p class="CI">${cityweatherData.CI}</p>
@@ -222,27 +222,27 @@ function getCityValue(name) {
   return value;
 }
 
-function getWxIcon(num) {
+function getWxIcon(num, Wxstring) {
   let icon;
   switch (parseInt(num)) {
     case 1:
-      icon = `<i class="fas fa-sun"></i>`;
+      icon = `<i class="fas fa-sun" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 2:
     case 3:
-      icon = `<i class="fas fa-cloud-sun"></i>`;
+      icon = `<i class="fas fa-cloud-sun" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 19:
     case 21:
-      icon = `<i class="fas fa-cloud-sun-rain"></i>`;
+      icon = `<i class="fas fa-cloud-sun-rain" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 4:
     case 5:
     case 6:
-      icon = `<i class="fas fa-cloud"></i>`;
+      icon = `<i class="fas fa-cloud" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 7:
@@ -256,7 +256,7 @@ function getWxIcon(num) {
     case 29:
     case 30:
     case 31:
-      icon = `<i class="fas fa-cloud-rain"></i>`;
+      icon = `<i class="fas fa-cloud-rain" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 11:
@@ -273,7 +273,7 @@ function getWxIcon(num) {
     case 36:
     case 37:
     case 41:
-      icon = `<i class="fas fa-cloud-showers-heavy"></i>`;
+      icon = `<i class="fas fa-cloud-showers-heavy" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 24:
@@ -283,15 +283,15 @@ function getWxIcon(num) {
     case 28:
     case 38:
     case 39:
-      icon = `<i class="fas fa-smog"></i>`;
+      icon = `<i class="fas fa-smog" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     case 42:
-      icon = `<i class="far fa-snowflake"></i>`;
+      icon = `<i class="far fa-snowflake" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
 
     default:
-      icon = `<i class="fas fa-sun"></i>`;
+      icon = `<i class="fas fa-sun" alt="${Wxstring}" title="${Wxstring}"></i>`;
       break;
   }
   return icon;
