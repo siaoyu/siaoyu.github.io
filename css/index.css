@@ -1,10 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap");
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.row div {
-  background-color: #eee;
+.container .row:nth-child(1) {
+  font-family: 'Itim', cursive;
+}
+
+.container .row:nth-child(2) {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.container .row:nth-child(2) .button {
+  min-width: 140px;
+  max-width: 100%;
+  padding: 3px;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  line-height: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 0;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+          box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+}
+
+.container .row:nth-child(2) .button:active, .container .row:nth-child(2) .button:hover {
+  outline: 0;
+}
+
+.container .row:nth-child(2) .button:active span, .container .row:nth-child(2) .button:hover span {
+  background: none;
+}
+
+.container .row:nth-child(2) .button span {
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+  border-radius: 6px;
+  background-color: #05062d;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+@media (min-width: 768px) {
+  .button {
+    min-width: 196px;
+    font-size: 24px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
