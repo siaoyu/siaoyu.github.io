@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap");
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.container {
+  min-width: 438px;
+}
+
+.bg-color {
+  background: linear-gradient(45deg, #ea927a, #fcbc75, #eafaf6, #4d9792, #6fe1ca);
+  background-size: 1000% 1000%;
+  background-position: top;
+  background-attachment: fixed;
+  -webkit-animation: bg-gradient 15s ease infinite;
+  animation: bg-gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@-webkit-keyframes bg-gradient {
+  0% {
+    background-position: 1% 0%;
+  }
+  50% {
+    background-position: 99% 100%;
+  }
+  100% {
+    background-position: 1% 0%;
+  }
+}
+
+@keyframes bg-gradient {
+  0% {
+    background-position: 1% 0%;
+  }
+  50% {
+    background-position: 99% 100%;
+  }
+  100% {
+    background-position: 1% 0%;
+  }
+}
+
+.accordion-item {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.accordion-item {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.accordion-button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  -webkit-transition: -webkit-filter 250ms;
+  transition: -webkit-filter 250ms;
+  transition: filter 250ms;
+  transition: filter 250ms, -webkit-filter 250ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+.accordion-button .button-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  will-change: transform;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1), -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.accordion-button .button-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: -webkit-gradient(linear, right top, left top, from(#52001b), color-stop(8%, #a30036), color-stop(92%, #a30036), to(#52001b));
+  background: linear-gradient(to left, #52001b 0%, #a30036 8%, #a30036 92%, #52001b 100%);
+}
+
+.accordion-button .button-front {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  background: #f0003c;
+  will-change: transform;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1), -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.accordion-button:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+.accordion-button:hover .button-front {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5), -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.accordion-button:hover .button-shadow {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5), -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.accordion-button:active .button-front {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-transition: -webkit-transform 34ms;
+  transition: -webkit-transform 34ms;
+  transition: transform 34ms;
+  transition: transform 34ms, -webkit-transform 34ms;
+}
+
+.accordion-button:active .button-shadow {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-transition: -webkit-transform 34ms;
+  transition: -webkit-transform 34ms;
+  transition: transform 34ms;
+  transition: transform 34ms, -webkit-transform 34ms;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: unset;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.accordion-button:focus {
+  border: 0;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.accordion-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.accordion-button:after {
+  content: unset;
+}
+
+@media (min-width: 768px) {
+  .button-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.card {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.time-tabs {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.time-tabs .line {
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  margin-top: 10px;
+  background: #FF1847;
+}
+
+.time-tabs .nav .nav-item {
+  opacity: .4;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.time-tabs .nav .nav-item:hover, .time-tabs .nav .nav-item:focus {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.time-tabs .nav .nav-item.active {
+  opacity: 1;
+}
+
+.time-tabs .nav .nav-item .nav-link {
+  color: #000000;
+  display: block;
+  font-weight: 600;
+  letter-spacing: .2em;
+  font-size: 14px;
+}
+/*# sourceMappingURL=WeatherCard-style.css.map */

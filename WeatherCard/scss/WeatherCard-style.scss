@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.container {
+    min-width: 438px;
+}
+
+// bg color
+.bg-color {
+    background: linear-gradient(45deg, #ea927a, #fcbc75, #eafaf6, #4d9792, #6fe1ca);
+    background-size: 1000% 1000%;
+    background-position: top;
+    background-attachment: fixed;
+    -webkit-animation: bg-gradient 15s ease infinite;
+    -moz-animation: bg-gradient 15s ease infinite;
+    -o-animation: bg-gradient 15s ease infinite;
+    animation: bg-gradient 15s ease infinite;
+    height: 100vh;
+}
+@-webkit-keyframes bg-gradient {
+    0%{background-position:1% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:1% 0%}
+}
+@-moz-keyframes bg-gradient {
+    0%{background-position:1% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:1% 0%}
+}
+@-o-keyframes bg-gradient {
+    0%{background-position:1% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:1% 0%}
+}
+@keyframes bg-gradient {
+    0%{background-position:1% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:1% 0%}
+}
+
+.accordion-item {
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+// area button
+.accordion-item {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.accordion-button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+
+    .button-shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: hsla(0, 0%, 0%, 0.25);
+        will-change: transform;
+        transform: translateY(2px);
+        transition: transform  600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    .button-edge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: linear-gradient(
+            to left, 
+            hsl(340, 100%, 16%) 0%, 
+            hsl(340, 100%, 32%) 8%, 
+            hsl(340, 100%, 32%) 92%, 
+            hsl(340, 100%, 16%) 100%);
+    }
+
+    .button-front {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding: 12px 27px;
+        border-radius: 12px;
+        font-size: 2rem;
+        text-align: center;
+        color: white;
+        background: hsl(345, 100%, 47%);
+        will-change: transform;
+        transform: translateY(-4px);
+        transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    &:hover {
+        filter: brightness(110%);
+
+        .button-front {
+            transform: translateY(-6px);
+            transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        .button-shadow {
+            transform: translateY(4px);
+            transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+    }
+
+    &:active {
+        .button-front {
+            transform: translateY(-2px);
+            transition: transform 34ms;
+        }
+
+        .button-shadow {
+            transform: translateY(1px);
+            transition: transform 34ms;
+        }
+    }
+
+    &:not(.collapsed) {
+        background-color: unset;
+        box-shadow: unset;
+    }
+
+    &:focus {
+        border: 0;
+        box-shadow: unset;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    &:after {
+        content: unset;
+    }
+}
+
+@media (min-width: 768px) {
+    .button-front {
+        font-size: 1.25rem;
+        padding: 12px 42px;
+    }
+}
+
+
+// city shadow
+.card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+// time tabs style
+.time-tabs {
+    position: relative;
+    padding-bottom: 12px;
+
+    .line {
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        margin-top: 10px;
+        background: #FF1847;
+    }
+
+    .nav {
+        .nav-item {
+            opacity: .4;
+            transition: all 0.4s ease;
+
+            &:hover, &:focus {
+                opacity: .7;
+                cursor: pointer;
+            }
+
+            &.active {
+                opacity: 1;
+            }
+
+            .nav-link {
+                color: #000000;
+                display: block;
+                font-weight: 600;
+                letter-spacing: .2em;
+                font-size: 14px;
+            }
+        }
+    }
+}
